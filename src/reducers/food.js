@@ -1,6 +1,9 @@
 const defaultFood = [
   {
     idMeal: "52977", strMeal: 'Corba', strArea: 'Turkish', strInstructions: 'Hello world'
+  },
+  {
+    idMeal: "52978", strMeal: 'Kili', strArea: 'Nigeria', strInstructions: 'Hello world!'
   }
 ];
 
