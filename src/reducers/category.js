@@ -1,14 +1,14 @@
 const defaultMenu = {
   error: null,
-  search: ['Beef', 'Vegan'],
+  category: [],
 }
 
-const foodReducer = (state = defaultMenu, action) => {
+const categoryReducer = (state = defaultMenu, action) => {
   switch (action.type) {
     case 'REQUEST_DATA':
       return {...state, error: defaultMenu.error}
-    case 'SEARCH':
-      return {...state, search: action.payload}
+    case 'CATEGORY':
+      return {...state, category: action.payload}
     case 'ERROR':
       return {...state, error: action.error}
     default:
@@ -17,4 +17,4 @@ const foodReducer = (state = defaultMenu, action) => {
 
 }
 
-export default foodReducer;
+export default categoryReducer;

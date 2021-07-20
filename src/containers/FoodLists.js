@@ -1,14 +1,14 @@
 import { React, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
-import displayCategories from '../actions/index';
+import { displayHome } from '../actions/index';
 import Food from '../components/Home';
 
 
 const Foodlist = () => {
-  const food = useSelector((state) => state.search);
+  const food = useSelector((state) => state.foodReducer.search);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(displayCategories());
+    dispatch(displayHome());
   }, [dispatch]);
   return (
       <div className="container">
@@ -20,6 +20,7 @@ const Foodlist = () => {
             </div>
             ))
           }
+  
         </div>
       </div>
   )
