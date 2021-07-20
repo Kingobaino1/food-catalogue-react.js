@@ -1,16 +1,17 @@
-const defaultFood = [
-  {
-    idMeal: "52977", strMeal: 'Corba', strArea: 'Turkish', strInstructions: 'Hello world'
-  },
-  {
-    idMeal: "52978", strMeal: 'Kili', strArea: 'Nigeria', strInstructions: 'Hello world!'
-  }
-];
+// import defaultMenu from '../js/foodApi';
+const defaultMenu = {
+  error: null,
+  search: ['Beef', 'Vegan'],
+}
 
-const foodReducer = (state = defaultFood, action) => {
+const foodReducer = (state = defaultMenu, action) => {
   switch (action.type) {
-    case 'DISPLAY_FOOD':
-      return [...state, action.payload]
+    case 'REQUEST_DATA':
+      return {...state, error: defaultMenu.error}
+    case 'SEARCH':
+      return {...state, search: action.payload}
+    case 'ERROR':
+      return {...state, error: action.error}
     default:
       return state;
   }

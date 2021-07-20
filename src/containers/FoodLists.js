@@ -1,13 +1,22 @@
-import React from 'react';
-import { connect, useSelector } from 'react-redux';
+import { React, useEffect } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
+import displayCategories from '../actions/index';
+
 
 const Foodlist = () => {
-  const food = useSelector((state) => state);
-  console.log(food, 'hello')
+  const food = useSelector((state) => state.search);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(displayCategories());
+  }, [dispatch]);
   return (
-      <div>
+      <div className="container">
         <ul>
-          {food.forEach((foo) => <li>foo.strInstructions</li>)}
+          {/* {food.map((foo) => <li>{foo}</li>)} */}
+          {
+             console.log(food, 'okay')
+          }
+         
         </ul>
         
       </div>

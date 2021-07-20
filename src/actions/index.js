@@ -1,8 +1,18 @@
-const DISPLAY_FOOD = 'DISPLAY_FOOD';
+const ERROR = 'ERROR';
 
-const displayFood = (food) => ({
-  type: DISPLAY_FOOD,
-  payload: food,
-});
+const displayCategories = () => {
+  return (dispatch) => {
+        return fetch('https://themealdb.com/api/json/v1/1/list.php?c=list', {
+           mode: 'cors',
+        })
+            .then(response => response.json())
+            .then(json => dispatch(
+                { type: 'SEARCH', payload: json.meals.map((cat) => cat.strCategory) }))
+            .catch(err => dispatch(
+                { type: ERROR, error: "Unable to fetch data" }))
+    }
+}
 
-export default displayFood;
+
+
+export default displayCategories;
