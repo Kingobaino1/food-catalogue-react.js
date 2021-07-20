@@ -1,6 +1,7 @@
 import { React, useEffect } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import displayCategories from '../actions/index';
+import Food from '../components/Home';
 
 
 const Foodlist = () => {
@@ -11,14 +12,15 @@ const Foodlist = () => {
   }, [dispatch]);
   return (
       <div className="container">
-        <ul>
-          {/* {food.map((foo) => <li>{foo}</li>)} */}
+        <div className="row">
           {
-             console.log(food, 'okay')
+          food.slice(0, 9).map((foo) => (
+            <div className="col-md-4">
+              <Food name={foo.strMeal} image={foo.strMealThumb} />
+            </div>
+            ))
           }
-         
-        </ul>
-        
+        </div>
       </div>
   )
 
