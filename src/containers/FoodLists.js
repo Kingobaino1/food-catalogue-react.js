@@ -12,11 +12,11 @@ const Foodlist = () => {
   }, [dispatch]);
   return (
       <div className="container">
-        <div className="row">
+        <div className="row mx-auto">
           {
           food.slice(0, 9).map((foo) => (
             <div className="col-md-4">
-              <Food name={foo.strMeal} image={foo.strMealThumb} />
+              <Food name={foo.strCategory} image={foo.strCategoryThumb} />
             </div>
             ))
           }

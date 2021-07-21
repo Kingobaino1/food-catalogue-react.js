@@ -2,12 +2,12 @@ const ERROR = 'ERROR';
 
 export const displayHome = () => {
   return (dispatch) => {
-        return fetch('https://themealdb.com/api/json/v1/1/search.php?s', {
+        return fetch('https://themealdb.com/api/json/v1/1/categories.php?', {
            mode: 'cors',
         })
             .then(response => response.json())
             .then(json => dispatch(
-                { type: 'SEARCH', payload: json.meals.map((cat) => cat) }))
+                { type: 'SEARCH', payload: json.categories.map((cat) => cat) }))
             .catch(err => dispatch(
                 { type: ERROR, error: "Unable to fetch data" }))
     }

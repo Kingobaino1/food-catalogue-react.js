@@ -1,6 +1,6 @@
 const defaultMenu = {
   error: null,
-  search: ['Beef', 'Vegan'],
+  search: [],
 }
 
 const foodReducer = (state = defaultMenu, action) => {
