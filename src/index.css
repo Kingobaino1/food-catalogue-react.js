@@ -20,3 +20,7 @@ code {
 .row {
   width: 90%;
 }
+
+.text-blue {
+  color: blue;
+}

@@ -1,31 +1,34 @@
 import { React, useEffect } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
-import CategoryFilter from './CategoryFilter';
-import { displayCategories } from '../actions/index';
-
+import { useDispatch, useSelector } from 'react-redux';
+import CategoryFilter from '../components/CategoryFilter';
+import { displayCategories, item, selectedCategory  } from '../actions/index';
 
 const Header = () => {
   const state = useSelector((state) => state.categoryReducer.category);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(displayCategories())
-  }, [dispatch]);;
+    dispatch(displayCategories());
+  }, [dispatch]);
   const handleFilterChange = (category) => {
-    // dispatch(changeFilter(category));
-    console.log('Hello world');
+    dispatch(item(category));
+    dispatch(selectedCategory(category))
+    console.log(dispatch(item(category)))
+    console.log(selectedCategory(category))
   };
+  const newCat = ['All', ...state];
   return (
     <div className="underline">
       <div className="d-flex justify-content-between container">
         <div className="d-flex justify-content-between">
-          <div className="mt-4 ml-4"><h1 className="text-blue">MEALDB</h1></div>
+          <div className="mt-4 ml-4"><h1 className="text-blue">MAJ Kitchen</h1></div>
           <div className="m-4 pt-3 mb-0">
             <h6>Categories</h6>
           </div>
           <div className="m-4 pt-3 mb-0">
+           
             <h6>
-              <CategoryFilter state={state}
-                value={state.map((item) => item.category)}
+              <CategoryFilter
+                value={newCat.map((item) => item)}
                 handleFilterChange={handleFilterChange}
               />
             </h6>
@@ -39,4 +42,4 @@ const Header = () => {
   );
 };
 
-export default connect()(Header);
+export default Header;
