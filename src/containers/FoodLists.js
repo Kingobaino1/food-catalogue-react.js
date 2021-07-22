@@ -3,9 +3,8 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { displayHome } from '../actions/index';
 import CategoryIndex from '../components/IndexPage';
 
-const Foodlist = () => {
+const FoodList = () => {
   const state = useSelector((state) => state.itemReducer);
-  console.log(state,'hey')
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(displayHome());
@@ -15,4 +14,4 @@ const Foodlist = () => {
     );
 };
 
-export default connect()(Foodlist);
+export default connect()(FoodList);

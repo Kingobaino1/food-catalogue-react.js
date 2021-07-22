@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Nav = ({ items }) => {
+const Nav = () => {
   const class1 = 'nav-item';
   return (
     <>
@@ -10,7 +10,7 @@ const Nav = ({ items }) => {
           <h1 className="text-dark font-weight-bold">Maj Kitchen</h1>
         </ul>
         <ul className="d-none d-md-block m-4">
-          <h5 className="text-blue mt-3 font-weight-bold">{items} Menu</h5>
+          <h5 className="text-blue mt-3 font-weight-bold">Menu</h5>
         </ul>
         <ul className="nav m-4">
           <li className={class1}>

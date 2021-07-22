@@ -24,3 +24,9 @@ code {
 .text-blue {
   color: blue;
 }
+
+.text {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}

@@ -4,12 +4,11 @@ import Nav from '../components/Nav';
 import { connect, useSelector } from 'react-redux';
 
 const ShowIndex = () => {
-  const category = useSelector((state) => state.itemReducer);
   const itemList = useSelector((state) => state.selectedItemReducer.item);
   return (
     <>
       <div className="container">
-        <Nav items={category} />
+        <Nav />
         <div className="row mx-auto">
           {
             itemList.map((food) => (

@@ -8,8 +8,8 @@ const Show = ({ image }) => {
       <img className="image" src={image} alt="food"></img> 
       </div>
     </>
-  )
-}
+  );
+};
 
 Show.propTypes = {
   image: PropTypes.string,

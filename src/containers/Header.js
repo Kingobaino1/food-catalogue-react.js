@@ -17,7 +17,7 @@ const Header = ({ items }) => {
     dispatch(selectedCategory(category));
   };
   const newCat = ['All', ...state];
-  
+
   return (
     <div className="underline">
       <div className="d-flex justify-content-between container">

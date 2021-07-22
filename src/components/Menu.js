@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Show from '../components/ShowPage';
+import { Link } from 'react-router-dom';
 
 const Menu = ({ image, name, clickHandler }) => {
   return (
     <>
       <div className="d-flex flex-column" onClick={() => clickHandler(name)}>
-          <Show image={image} />
-          <div className="w-25 mx-auto">{name}</div>
+          <Link to={`/categories/${name}`}><Show image={image} /></Link>
+          <div className="w-25 mx-auto"><h6 className="text">{name}</h6></div>
       </div>
     </>
   );

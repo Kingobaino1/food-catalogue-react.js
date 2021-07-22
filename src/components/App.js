@@ -1,12 +1,12 @@
 import React from 'react';
-import Foodlist from '../containers/FoodLists';
+import FoodList from '../containers/FoodLists';
 
 const App = () => {
   return (
     <div>
-      <Foodlist />
+      <FoodList />
     </div>
-  )
-}
+  );
+};
 
 export default App;
