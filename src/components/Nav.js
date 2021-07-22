@@ -17,7 +17,7 @@ const Nav = () => {
             <Link to="/" className="nav-link active mt-3 text-dark font-weight-bold">Home</Link>
           </li>
           <li className={class1}>
-            <i className="fas fa-user nav-link mt-3 text-blue" />
+            <i className="fas fa-user nav-link m-3 text-blue" />
           </li>
         </ul>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import Food from '../components/Home';
-import Nav from '../components/Nav';
 import { connect, useSelector } from 'react-redux';
+import Food from './Home';
+import Nav from './Nav';
 
 const ShowIndex = () => {
   const itemList = useSelector((state) => state.selectedItemReducer.item);
@@ -12,7 +12,7 @@ const ShowIndex = () => {
         <div className="row mx-auto">
           {
             itemList.map((food) => (
-              <div className="col-md-4">
+              <div className="col-md-4" key="{food.strMeal}">
                 <Food name={food.strMeal} image={food.strMealThumb} />
               </div>
             ))

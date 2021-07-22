@@ -10,7 +10,7 @@ const reducers = combineReducers({
   categoryReducer,
   itemReducer,
   selectedItemReducer,
-})
+});
 const store = createStore(reducers, applyMiddleware(thunk));
 
 export default store;

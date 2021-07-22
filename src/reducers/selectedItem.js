@@ -5,10 +5,10 @@ const initialState = {
 const selectedItemReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SELECTED_ITEM':
-      return {...state, item: action.payload};
+      return { ...state, item: action.payload };
     default:
       return state;
-  };
+  }
 };
 
 export default selectedItemReducer;
