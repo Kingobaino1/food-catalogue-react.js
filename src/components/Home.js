@@ -10,12 +10,12 @@ const Food = ({ image, name }) => {
           <div className="w-100 mx-auto">{name}</div>
       </div>
     </>
-  )
-}
+  );
+};
 
 Food.propTypes = {
   image: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
 };
 
 export default Food;

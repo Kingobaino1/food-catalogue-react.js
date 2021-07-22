@@ -12,16 +12,16 @@ const ShowIndex = () => {
         <Nav items={category} />
         <div className="row mx-auto">
           {
-          itemList.map((food) => (
-            <div className="col-md-4">
-              <Food name={food.strMeal} image={food.strMealThumb} />
-            </div>
+            itemList.map((food) => (
+              <div className="col-md-4">
+                <Food name={food.strMeal} image={food.strMealThumb} />
+              </div>
             ))
           }
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default connect()(ShowIndex);
