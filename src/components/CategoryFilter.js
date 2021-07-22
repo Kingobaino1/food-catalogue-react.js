@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-
 const CategoryFilter = ({ handleFilterChange }) => {
   const state = useSelector((state) => state.categoryReducer.category);
-  const newCat = ['All', ...state]
+  const newCat = ['All', ...state];
 
   return (
     <label htmlFor="categories" className="d-flex justify-content-between">

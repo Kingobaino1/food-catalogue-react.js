@@ -5,8 +5,6 @@ const defaultMenu = {
 
 const categoryReducer = (state = defaultMenu, action) => {
   switch (action.type) {
-    case 'REQUEST_DATA':
-      return {...state, error: defaultMenu.error}
     case 'CATEGORY':
       return {...state, category: action.payload}
     case 'ERROR':
