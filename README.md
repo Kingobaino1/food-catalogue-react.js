@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo](https://react-js-bookstore.netlify.app/)
+[Live Demo](https://maj-kitchen.netlify.app/)
 
 ## Getting Started
 
