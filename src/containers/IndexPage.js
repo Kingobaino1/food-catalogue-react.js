@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Menu from './Menu';
-import Header from '../containers/Header';
+import Menu from '../components/Menu';
+import Header from './Header';
 import { selectedCategory } from '../actions/index';
 
 const CategoryIndex = () => {
@@ -19,7 +19,7 @@ const CategoryIndex = () => {
         <div className="row mx-auto">
           {
           food.slice(0, 12).map((food) => (
-            <div className="col-md-4" key="{food.strCategoryThumb}">
+            <div className="col-md-4" key={food.idCategory}>
               <Menu
                 name={food.strCategory}
                 image={food.strCategoryThumb}

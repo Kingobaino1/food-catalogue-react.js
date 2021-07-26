@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 const ERROR = 'ERROR';
 const ITEM = 'ITEM';
 
@@ -36,6 +34,17 @@ const selectedCategory = (category) => (dispatch) => fetch(`https://themealdb.co
     { type: ERROR, error: err },
   ));
 
+const recipe = (name) => (dispatch) => fetch(`https://themealdb.com/api/json/v1/1/search.php?s=${name}`, {
+  mode: 'cors',
+})
+  .then((response) => response.json())
+  .then((json) => dispatch(
+    { type: 'RECIPE', payload: json.meals.map((meal) => meal) },
+  ))
+  .catch((err) => dispatch(
+    { type: ERROR, error: err },
+  ));
+
 const item = (data) => ({
   type: ITEM,
   payload: data,
@@ -46,4 +55,5 @@ export {
   displayCategories,
   selectedCategory,
   item,
+  recipe,
 };
