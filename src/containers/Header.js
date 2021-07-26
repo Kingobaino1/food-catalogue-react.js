@@ -17,7 +17,33 @@ const Header = ({ items }) => {
     dispatch(selectedCategory(category));
   };
   const newCat = ['All', ...state];
-
+  if (category === 'All') {
+    return (
+      <div className="underline">
+        <div className="d-flex justify-content-between container">
+          <div className="d-flex justify-content-between">
+            <div className="m-4"><h1 className="text-blue">MAJ Kitchen</h1></div>
+            <div className="m-4 pt-3 mb-0">
+              <h6>{items}</h6>
+            </div>
+            <div className="m-4 pt-3 mb-0">
+              <Link to="/">
+                <h6>
+                  <CategoryFilter
+                    value={newCat.map((item) => item)}
+                    handleFilterChange={handleFilterChange}
+                  />
+                </h6>
+              </Link>
+            </div>
+          </div>
+          <div>
+            <i className="fas fa-user m-4 pt-3 mb-0 text-blue" />
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="underline">
       <div className="d-flex justify-content-between container">

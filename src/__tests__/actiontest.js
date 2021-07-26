@@ -28,11 +28,38 @@ describe('should retrieve data and insert on the data state', () => {
     };
   });
 
-  it('should successfully retrieve searched categoris', () => (
+  it('should successfully retrieve searched categories', () => (
     store.dispatch(Actions.displayHome())
       .then(() => {
         const actions = store.getActions();
         expect(actions[0].type).toEqual('SEARCH');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should not retrieve an object', () => (
+    store.dispatch(Actions.displayHome())
+      .then(() => {
+        const actions = store.getActions();
+        expect(typeof actions.payload === 'object').toBe('false');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should retrieve an array', () => (
+    store.dispatch(Actions.displayHome())
+      .then(() => {
+        const actions = store.getActions();
+        expect(actions.payload).toBeType('array');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should report an error', () => (
+    store.dispatch(Actions.displayHome())
+      .then(() => {
+        const actions = store.getActions();
+        expect(actions[1].type).toEqual('ERROR');
       })
       .catch((err) => err)
   ));
@@ -46,11 +73,65 @@ describe('should retrieve data and insert on the data state', () => {
       .catch((err) => err)
   ));
 
+  it('should not retrieve an object', () => (
+    store.dispatch(Actions.displayCategories())
+      .then(() => {
+        const actions = store.getActions();
+        expect(typeof actions.payload === 'object').toBe('false');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should retrieve an array', () => (
+    store.dispatch(Actions.displayCategories())
+      .then(() => {
+        const actions = store.getActions();
+        expect(actions.payload).toBeType('array');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should report an error', () => (
+    store.dispatch(Actions.displayCategories())
+      .then(() => {
+        const actions = store.getActions();
+        expect(actions[1].type).toEqual('ERROR');
+      })
+      .catch((err) => err)
+  ));
+
   it('should successfully retrieve selectedCategory', () => (
     store.dispatch(Actions.selectedCategory('Beef'))
       .then(() => {
         const actions = store.getActions();
         expect(actions[0].type).toEqual('SELECTED_ITEM');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should not retrieve an object', () => (
+    store.dispatch(Actions.selectedCategory('Beef'))
+      .then(() => {
+        const actions = store.getActions();
+        expect(typeof actions.payload === 'object').toBe('false');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should retrieve an array', () => (
+    store.dispatch(Actions.selectedCategory('Beef'))
+      .then(() => {
+        const actions = store.getActions();
+        expect(actions.payload).toBeType('array');
+      })
+      .catch((err) => err)
+  ));
+
+  it('should report an error', () => (
+    store.dispatch(Actions.selectedCategory('Beef'))
+      .then(() => {
+        const actions = store.getActions();
+        expect(actions[1].type).toEqual('ERROR');
       })
       .catch((err) => err)
   ));
