@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Food from '../components/Home';
 import Nav from '../components/Nav';
 import { recipe } from '../actions/index';
+import Loading from '../components/Loading';
 
 const ShowIndex = () => {
   const itemList = useSelector((state) => state.selectedItemReducer.item);
@@ -11,6 +12,11 @@ const ShowIndex = () => {
   const showRecipe = (name) => {
     dispatch(recipe(name));
   };
+  if (itemList.length === 0) {
+    return (
+      <Loading />
+    );
+  }
   return (
     <>
       <div className="container">

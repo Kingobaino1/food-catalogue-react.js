@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux';
+import Loading from '../components/Loading';
 import Nav from '../components/Nav';
 import Show from '../components/ShowPage';
 
 const Recipe = () => {
   const state = useSelector((state) => state.recipeReducer.recipe);
+  if (state.length === 0) {
+    return (
+      <Loading />
+    );
+  }
   return (
     <>
       <Nav />
