@@ -49,7 +49,6 @@ $ npm test
 
 Then open localhost:3000 in your web browser.
 
-
 ## Author
 
 👤 **Kingsley Ibeh**
@@ -70,7 +69,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/).
-- [ Nelson Sakwa on Behance](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)).
+- [ Nelson Sakwa on Behance](<https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)>).
 - [The Meal Db](https://www.themealdb.com/api.php)
 
 ## 📝 License
